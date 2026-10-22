@@ -1,19 +1,130 @@
-/* TODO(ch2-T3): Mobile-first: CSS ngoài @media là giao diện điện thoại.
-   Chỉ dùng 2 mốc: @media (width >= 40rem) và @media (width >= 64rem).
-   .container - rộng tối đa --container-max, căn giữa (margin-inline: auto),
-   padding-inline --space-4, từ 40rem tăng lên --space-6 */
+/* Mobile-first: CSS ngoài @media là giao diện điện thoại.
+   Chỉ dùng 2 mốc: (width >= 40rem) và (width >= 64rem) */
+.container {
+  max-inline-size: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
 
-/* TODO(ch2-T3): .site-header nền --color-header-bg; từ 40rem: position: sticky; top 0.
-   .site-header__inner và .site-nav__list dùng Flexbox (flex-wrap: wrap, gap, align-items: center,
-   justify-content: space-between); bỏ dấu chấm của list */
+  @media (width >= 40rem) {
+    padding-inline: var(--space-6);
+  }
+}
 
-/* TODO(ch2-T3): .site-footer nền tối, chữ nhỏ; .site-footer__inner cột dọc, từ 64rem thành hàng ngang */
+/* Header: nền tối, từ 40rem dính trên đầu khi cuộn */
+.site-header {
+  --color-focus: var(--color-accent); /* viền focus nổi trên nền tối */
+  background-color: var(--color-header-bg);
+  color: var(--color-header-text);
 
-/* TODO(ch2-T3): .page (padding trên dưới), .page--narrow (hẹp lại cho form), .page__intro (tối đa 60ch),
-   .section, .section__head (Flexbox: tiêu đề trái, link "Xem tất cả" phải) */
+  @media (width >= 40rem) {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+}
 
-/* TODO(ch2-T3): .hero - Grid 1 cột, nền gradient từ primary tới màu tối, chữ trắng, bo góc lớn;
-   từ 64rem: grid-template-columns 2 cột */
+.site-header__inner,
+.site-nav__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.site-header__inner {
+  padding-block: var(--space-3);
+}
+
+.site-nav__list {
+  justify-content: flex-start;
+  gap: var(--space-1);
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+/* Footer: nền tối, chữ nhỏ; cột dọc, từ 64rem thành hàng ngang */
+.site-footer {
+  --color-focus: var(--color-accent);
+  margin-block-start: var(--space-12);
+  background-color: var(--color-header-bg);
+  color: var(--color-header-text);
+  font-size: var(--text-sm);
+
+  & a {
+    color: inherit;
+  }
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-block: var(--space-8);
+
+  @media (width >= 64rem) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+/* Trang con và các khối nội dung */
+.page {
+  padding-block: var(--space-8);
+
+  @media (width >= 40rem) {
+    padding-block: var(--space-12);
+  }
+}
+
+/* Đặt sau .container để ghi đè độ rộng tối đa */
+.page--narrow {
+  max-inline-size: 48rem;
+}
+
+.page__intro {
+  max-inline-size: 60ch;
+  margin-block: var(--space-3) var(--space-8);
+  color: var(--color-text-muted);
+}
+
+.section {
+  padding-block: var(--space-8);
+}
+
+/* Tiêu đề bên trái, link "Xem tất cả" bên phải */
+.section__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  margin-block-end: var(--space-6);
+}
+
+/* Hero: 1 cột, từ 64rem thành 2 cột chữ + ảnh */
+.hero {
+  --color-focus: var(--color-accent);
+  display: grid;
+  gap: var(--space-8);
+  align-items: center;
+  /* Chừa lề hai bên trên điện thoại để thấy bo góc */
+  inline-size: calc(100% - 2 * var(--space-4));
+  margin-block-start: var(--space-6);
+  padding: var(--space-8) var(--space-6);
+  border-radius: var(--radius-lg);
+  background-image: linear-gradient(135deg, var(--palette-blue-700), var(--palette-blue-900));
+  color: var(--palette-white);
+
+  @media (width >= 40rem) {
+    padding: var(--space-12);
+  }
+
+  @media (width >= 64rem) {
+    grid-template-columns: 1.1fr 1fr;
+  }
+}
 
 /* TODO(ch2-T4): .card-grid - display: grid;
    grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr)); gap; bỏ list-style.
