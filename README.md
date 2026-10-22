@@ -49,7 +49,6 @@ IN452902-LapTrinhFrontEnd/
 4. Vào thư mục chương muốn xem (ví dụ `chuong-02`), chuột phải vào `index.html` và chọn **Open with Live Server**.
 5. Trình duyệt tự mở trang. Mỗi lần lưu file, trang sẽ tự tải lại.
 
-> Lưu ý: không mở trang bằng cách nhấp đúp file `.html`, vì một số đường dẫn có thể không hoạt động đúng.
 
 ## Quy ước commit
 
