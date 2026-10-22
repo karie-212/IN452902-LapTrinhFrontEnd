@@ -9,9 +9,6 @@ Trường Đại học Đồng Tháp · Năm học 2026–2027
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat)
 ![Status](https://img.shields.io/badge/status-in--progress-yellow?style=flat)
 
-[Xem Chương 1](https://karie-212.github.io/IN452902-LapTrinhFrontEnd/chuong-01/) ·
-[Xem Chương 2](https://karie-212.github.io/IN452902-LapTrinhFrontEnd/chuong-02/)
-
 </div>
 
 ---
@@ -60,5 +57,5 @@ Mình là **Trần Thái Kiệt** (Karie), sinh viên năm 2 ngành Khoa học m
 - **Lớp:** ĐHCNTT24A-CS
 - **MSSV:** 0024418950
 
-Liên hệ: [GitHub](https://github.com/karie-212) · [LinkedIn](https://www.linkedin.com/in/tranthaikiet) · [Facebook](https://www.facebook.com/tr.th.kiet) · [TikTok](https://www.tiktok.com/@kariebel)
+Contact: [GitHub](https://github.com/karie-212) · [LinkedIn](https://www.linkedin.com/in/tranthaikiet) · [Facebook](https://www.facebook.com/tr.th.kiet) · [TikTok](https://www.tiktok.com/@kariebel)
 
