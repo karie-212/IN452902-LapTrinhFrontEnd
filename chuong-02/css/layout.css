@@ -126,9 +126,15 @@
   }
 }
 
-/* TODO(ch2-T4): .card-grid - display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr)); gap; bỏ list-style.
-   KHÔNG dùng media query cho lưới này. */
+/* Lưới card tự xuống hàng, KHÔNG dùng media query.
+   min(16rem, 100%) giữ cột không rộng hơn khung trên màn hẹp */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+  gap: var(--space-6);
+  padding-inline-start: 0;
+  list-style: none;
+}
 
 /* TODO(ch2-T5): .detail - Grid 1 cột; từ 64rem: 2 cột (2fr và 1fr) với grid-template-areas
      "head head" "media info" "content info" "prep info" "foot foot".
