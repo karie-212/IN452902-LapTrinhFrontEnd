@@ -1,0 +1,91 @@
+<div align="center">
+
+# EduHub Web
+
+**Bài tập môn IN452902 – Lập trình Front End**
+Trường Đại học Đồng Tháp · Năm học 2026–2027
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat)
+![Responsive](https://img.shields.io/badge/responsive-mobile--first-003f87?style=flat)
+![Dark mode](https://img.shields.io/badge/dark%20mode-supported-1a1a2e?style=flat)
+![Status](https://img.shields.io/badge/status-in--progress-yellow?style=flat)
+
+[Xem Chương 1](https://karie-212.github.io/IN452902-LapTrinhFrontEnd/chuong-01/) ·
+[Xem Chương 2](https://karie-212.github.io/IN452902-LapTrinhFrontEnd/chuong-02/)
+
+</div>
+
+---
+
+## Giới thiệu
+
+**EduHub Web** là cổng thông tin câu lạc bộ và sự kiện sinh viên Trường Đại học Đồng Tháp.
+Website được xây dựng dần qua từng chương của môn học: bắt đầu từ HTML ngữ nghĩa, sau đó tạo kiểu bằng CSS hiện đại, chạy tốt trên điện thoại, máy tính bảng và máy tính.
+
+Website gồm 4 trang: **Trang chủ**, **Lịch sự kiện**, **Chi tiết sự kiện** và **Đăng ký thành viên**.
+
+## Nội dung theo chương
+
+| Chương | Chủ đề | Mã nguồn | Xem trực tiếp |
+|:---:|---|:---:|:---:|
+| 01 | HTML ngữ nghĩa, bảng, form, SEO | [`chuong-01`](./chuong-01) | [Mở trang](https://karie-212.github.io/IN452902-LapTrinhFrontEnd/chuong-01/) |
+| 02 | CSS responsive, design token, dark mode | [`chuong-02`](./chuong-02) | [Mở trang](https://karie-212.github.io/IN452902-LapTrinhFrontEnd/chuong-02/) |
+
+### Chương 1 – HTML
+
+- Bố cục bằng thẻ ngữ nghĩa: `header`, `nav`, `main`, `section`, `article`, `footer`
+- Bảng lịch sự kiện có `caption`, `th scope`, `time`
+- Form đăng ký dùng kiểm tra dữ liệu gốc của HTML, không cần JavaScript
+- Meta SEO, Open Graph và liên kết "Bỏ qua, đến nội dung chính" cho người dùng bàn phím
+
+### Chương 2 – CSS
+
+- Design token bằng biến CSS, dark mode chỉ đổi giá trị biến
+- Tổ chức CSS bằng `@layer` và `@import`
+- Bố cục mobile-first với Flexbox, Grid, `auto-fit` và `grid-template-areas`
+- Selector hiện đại: `:has()`, `:user-invalid`, CSS nesting
+- Tôn trọng cài đặt `prefers-reduced-motion` của người dùng
+
+## Cấu trúc thư mục
+
+```
+IN452902-LapTrinhFrontEnd/
+├── chuong-01/        # HTML: 4 trang EduHub Web
+├── chuong-02/        # CSS: tạo kiểu responsive cho 4 trang
+│   └── css/          # tokens, base, layout, components
+└── README.md
+```
+
+## Chạy trên máy
+
+1. Clone repo về và mở bằng VS Code.
+2. Cài extension **Live Server**.
+3. Chuột phải vào `index.html` trong thư mục chương muốn xem, chọn **Open with Live Server**.
+
+## Quy ước commit
+
+Repo dùng [Conventional Commits](https://www.conventionalcommits.org/), kèm mã nhiệm vụ của đề bài:
+
+```
+feat(ch2-T1): thêm design token và dark mode
+fix(ch1-T2): sửa liên kết trang sự kiện
+docs: cập nhật README
+```
+
+---
+
+## Về mình
+
+Mình là **Trần Thái Kiệt** (Karie), sinh viên năm 2 ngành Khoa học máy tính, Trường Đại học Đồng Tháp.
+
+- **Lớp:** ĐHCNTT24A-cs
+- **MSSV:** 0024418950
+
+Liên hệ: [GitHub](https://github.com/karie-212) · [LinkedIn](https://www.linkedin.com/in/tranthaikiet)
+
+<div align="center">
+
+*Consistency is beauty!*
+
+</div>
