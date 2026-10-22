@@ -1,3 +1,5 @@
+Xem trực tiếp: https://karie-212.github.io/IN452902-LapTrinhFrontEnd/chuong-01/
+
 # EduHub Web — Ch01 (starter)
 
 Chương 1 môn **IN4529 — Lập trình Front End**. Em sẽ dựng 4 trang HTML cho **EduHub Web** — cổng
