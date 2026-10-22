@@ -40,9 +40,16 @@ IN452902-LapTrinhFrontEnd/
 
 ## Chạy trên máy
 
-1. Clone repo về và mở bằng VS Code.
-2. Cài extension **Live Server**.
-3. Chuột phải vào `index.html` trong thư mục chương muốn xem, chọn **Open with Live Server**.
+1. Clone repo về máy:
+```bash
+   git clone https://github.com/karie-212/IN452902-LapTrinhFrontEnd.git
+```
+2. Mở thư mục vừa clone bằng VS Code (**File → Open Folder**).
+3. Cài extension **Live Server** (tác giả Ritwick Dey) trong tab Extensions.
+4. Vào thư mục chương muốn xem (ví dụ `chuong-02`), chuột phải vào `index.html` và chọn **Open with Live Server**.
+5. Trình duyệt tự mở trang. Mỗi lần lưu file, trang sẽ tự tải lại.
+
+> Lưu ý: không mở trang bằng cách nhấp đúp file `.html`, vì một số đường dẫn có thể không hoạt động đúng.
 
 ## Quy ước commit
 
