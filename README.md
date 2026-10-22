@@ -52,7 +52,7 @@ Repo dùng [Conventional Commits](https://www.conventionalcommits.org/), kèm m�
 
 ## Về mình
 
-Mình là **Trần Thái Kiệt** (Karie), sinh viên năm 2 ngành Khoa học máy tính, Trường Đại học Đồng Tháp.
+Mình là **Trần Thái Kiệt** (Karie), sinh viên năm 2 ngành Computer Science, Trường Đại học Đồng Tháp.
 
 - **Lớp:** ĐHCNTT24A-CS
 - **MSSV:** 0024418950
