@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://karie-212.github.io/IN452902-LapTrinhFrontEnd/chuong-01/">
   </head>
   <body>
-    <!-- TODO(ch1-T6) (challenge): thêm liên kết "Bỏ qua, đến nội dung chính" trỏ tới id của <main> -->
+    <a href="#noi-dung">Bỏ qua, đến nội dung chính</a>
 
     <header>
       <a href="index.html">
@@ -32,7 +32,7 @@
       </nav>
     </header>
 
-    <main>
+    <main id="noi-dung">
       <h1>EduHub Web</h1>
       <p>Cổng câu lạc bộ và sự kiện sinh viên Trường Đại học Đồng Tháp.</p>
 
@@ -40,24 +40,24 @@
         <h2>Sự kiện sắp tới</h2>
 
         <article>
-          <h3>Workshop: Làm website đầu tiên với HTML</h3>
+          <h3 id="su-kien-workshop-html">Workshop: Làm website đầu tiên với HTML</h3>
           <p>07:30, <time datetime="2026-10-17">thứ Bảy 17/10/2026</time> · Phòng máy B1.203 · CLB Tin học</p>
           <p>Hai giờ thực hành: viết trang giới thiệu bản thân và đưa lên GitHub Pages.</p>
-          <p><a href="event-detail.html">Xem chi tiết</a></p>
+          <p><a href="event-detail.html" id="xem-workshop-html" aria-labelledby="xem-workshop-html su-kien-workshop-html">Xem chi tiết</a></p>
         </article>
 
         <article>
-          <h3>Ngày hội Hiến máu tình nguyện</h3>
+          <h3 id="su-kien-hien-mau">Ngày hội Hiến máu tình nguyện</h3>
           <p>07:00, <time datetime="2026-10-24">thứ Bảy 24/10/2026</time> · Hội trường lớn · CLB Tình nguyện</p>
           <p>Mỗi giọt máu cho đi, một cuộc đời ở lại. Có giấy chứng nhận và quà cho người tham gia.</p>
-          <p><a href="events.html">Xem chi tiết</a></p>
+          <p><a href="events.html" id="xem-hien-mau" aria-labelledby="xem-hien-mau su-kien-hien-mau">Xem chi tiết</a></p>
         </article>
 
         <article>
-          <h3>English Speaking Night: Halloween</h3>
+          <h3 id="su-kien-halloween">English Speaking Night: Halloween</h3>
           <p>18:30, <time datetime="2026-10-31">thứ Bảy 31/10/2026</time> · Sảnh nhà A1 · CLB Tiếng Anh</p>
           <p>Trò chơi, hoá trang và luyện nói tiếng Anh cùng sinh viên các khoa.</p>
-          <p><a href="events.html">Xem chi tiết</a></p>
+          <p><a href="events.html" id="xem-halloween" aria-labelledby="xem-halloween su-kien-halloween">Xem chi tiết</a></p>
         </article>
       </section>
 
