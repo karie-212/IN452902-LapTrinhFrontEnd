@@ -5,29 +5,102 @@
   --palette-cyan-500: #00c4cc;
   --palette-ink: #1a1a2e;
   --palette-white: #ffffff;
+  /* Bổ sung cho chữ phụ, trạng thái và dark mode */
+  --palette-blue-300: #8ab4ff;
+  --palette-slate-600: #4a5068;
+  --palette-slate-300: #b8c0d4;
+  --palette-slate-200: #d5dcea;
+  --palette-ink-700: #3d4266;
+  --palette-ink-800: #252541;
+  --palette-ink-950: #10101e;
+  --palette-amber-800: #7a4f00;
+  --palette-amber-100: #fff1cc;
+  --palette-amber-300: #ffd27a;
+  --palette-amber-950: #3a2a00;
+  --palette-red-700: #b42318;
+  --palette-red-300: #ff9b91;
+  --palette-green-700: #1a7f37;
+  --palette-green-300: #6fdc8c;
 
-  /* TODO(ch2-T1): Mọi tệp khác chỉ dùng var(--…) khai báo ở đây, không viết mã màu trực tiếp.
-     Màu theo vai trò (semantic), lấy giá trị từ palette ở trên:
-       --color-primary, --color-on-primary, --color-accent, --color-bg, --color-surface,
-       --color-text, --color-text-muted, --color-border, --color-link, --color-focus,
-       --color-warning, --color-warning-bg, --color-danger, --color-success,
-       --color-header-bg, --color-header-text */
+  /* Màu theo vai trò (semantic) - chế độ sáng */
+  --color-primary: var(--palette-blue-700);
+  --color-on-primary: var(--palette-white);
+  --color-accent: var(--palette-cyan-500);
+  --color-on-accent: var(--palette-blue-900);
+  --color-bg: var(--palette-blue-50);
+  --color-surface: var(--palette-white);
+  --color-text: var(--palette-ink);
+  --color-text-muted: var(--palette-slate-600);
+  --color-border: var(--palette-slate-200);
+  --color-link: var(--palette-blue-700);
+  --color-focus: var(--palette-blue-700);
+  --color-warning: var(--palette-amber-800);
+  --color-warning-bg: var(--palette-amber-100);
+  --color-danger: var(--palette-red-700);
+  --color-success: var(--palette-green-700);
+  --color-header-bg: var(--palette-blue-900);
+  --color-header-text: var(--palette-white);
 
-  /* TODO(ch2-T1): Chữ
-       --font-sans: "Be Vietnam Pro", system-ui, … , sans-serif;  (không tải font ngoài)
-       Thang cỡ chữ --text-sm … --text-3xl; ít nhất một cỡ dùng clamp(min, co giãn, max) */
+  /* Chữ: chỉ dùng font có sẵn trên máy, không tải font ngoài */
+  --font-sans: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.2rem + 1.4vw, 2rem);
+  --text-3xl: clamp(1.875rem, 1.4rem + 2.4vw, 2.75rem);
+  --leading-tight: 1.25;
+  --leading-normal: 1.6;
 
-  /* TODO(ch2-T1): Khoảng cách theo thang 4px bằng rem: --space-1 (0.25rem), --space-2, --space-3,
-       --space-4, --space-6, --space-8, --space-12, --space-16 */
+  /* Khoảng cách theo thang 4px */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
 
-  /* TODO(ch2-T1): Bo góc --radius-sm/md/lg/full; đổ bóng --shadow-sm/md/lg;
-       --container-max (vd. 72rem); thời gian chuyển động --duration-fast/normal */
+  /* Bo góc, đổ bóng, độ rộng, chuyển động */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.08);
+  --shadow-md: 0 4px 12px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 12px 32px rgb(0 0 0 / 0.16);
+  --container-max: 72rem;
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
 
-  /* TODO(ch2-T1): Ghi chú breakpoint (var() KHÔNG dùng được trong @media, chỉ để tra cứu):
-       --breakpoint-sm: 40rem;  (640px)   --breakpoint-lg: 64rem;  (1024px) */
+  /* Breakpoint chỉ để tra cứu: var() không dùng được trong @media */
+  --breakpoint-sm: 40rem; /* 640px */
+  --breakpoint-lg: 64rem; /* 1024px */
 
-  /* TODO(ch2-T1): color-scheme: light dark; */
+  /* Cho trình duyệt biết trang hỗ trợ cả hai chế độ (thanh cuộn, ô nhập…) */
+  color-scheme: light dark;
 }
 
-/* TODO(ch2-T1): Dark mode - trong @media (prefers-color-scheme: dark) { :root { … } }
-   chỉ đổi giá trị các token --color-* (nền tối, chữ sáng, primary sáng hơn để đủ tương phản). */
+/* Dark mode: chỉ đổi giá trị token màu, mọi tệp khác tự ăn theo */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-primary: var(--palette-blue-300);
+    --color-on-primary: var(--palette-blue-900);
+    --color-accent: var(--palette-cyan-500);
+    --color-on-accent: var(--palette-blue-900);
+    --color-bg: var(--palette-ink);
+    --color-surface: var(--palette-ink-800);
+    --color-text: var(--palette-blue-50);
+    --color-text-muted: var(--palette-slate-300);
+    --color-border: var(--palette-ink-700);
+    --color-link: var(--palette-blue-300);
+    --color-focus: var(--palette-cyan-500);
+    --color-warning: var(--palette-amber-300);
+    --color-warning-bg: var(--palette-amber-950);
+    --color-danger: var(--palette-red-300);
+    --color-success: var(--palette-green-300);
+    --color-header-bg: var(--palette-ink-950);
+    --color-header-text: var(--palette-blue-50);
+  }
+}
