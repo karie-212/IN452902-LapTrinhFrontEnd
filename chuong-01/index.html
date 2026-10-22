@@ -9,19 +9,116 @@
   <body>
     <!-- TODO(ch1-T6) (challenge): thêm liên kết "Bỏ qua, đến nội dung chính" trỏ tới id của <main> -->
 
-    <!-- TODO(ch1-T1): header gồm logo (assets/logo.svg) và <nav> 4 liên kết:
-         Trang chủ, Sự kiện, Câu lạc bộ, Đăng ký thành viên -->
+    <header>
+      <a href="index.html">
+        <img src="assets/logo.svg" alt="EduHub — về trang chủ" width="64" height="64">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html" aria-current="page">Trang chủ</a></li>
+          <li><a href="events.html">Sự kiện</a></li>
+          <li><a href="index.html#cau-lac-bo">Câu lạc bộ</a></li>
+          <li><a href="register.html">Đăng ký thành viên</a></li>
+        </ul>
+      </nav>
+    </header>
 
     <main>
       <h1>EduHub Web</h1>
       <p>Cổng câu lạc bộ và sự kiện sinh viên Trường Đại học Đồng Tháp.</p>
 
-      <!-- TODO(ch1-T1): section "Sự kiện sắp tới" với 3 <article> (lấy chữ ở content/noi-dung-mau.md) -->
-      <!-- TODO(ch1-T1): section "Câu lạc bộ" liệt kê 6 CLB -->
-      <!-- TODO(ch1-T1): section "Câu hỏi thường gặp" dùng ít nhất 3 <details>/<summary> -->
+      <section id="su-kien-sap-toi">
+        <h2>Sự kiện sắp tới</h2>
+
+        <article>
+          <h3>Workshop: Làm website đầu tiên với HTML</h3>
+          <p>07:30, <time datetime="2026-10-17">thứ Bảy 17/10/2026</time> · Phòng máy B1.203 · CLB Tin học</p>
+          <p>Hai giờ thực hành: viết trang giới thiệu bản thân và đưa lên GitHub Pages.</p>
+          <p><a href="event-detail.html">Xem chi tiết</a></p>
+        </article>
+
+        <article>
+          <h3>Ngày hội Hiến máu tình nguyện</h3>
+          <p>07:00, <time datetime="2026-10-24">thứ Bảy 24/10/2026</time> · Hội trường lớn · CLB Tình nguyện</p>
+          <p>Mỗi giọt máu cho đi, một cuộc đời ở lại. Có giấy chứng nhận và quà cho người tham gia.</p>
+          <p><a href="events.html">Xem chi tiết</a></p>
+        </article>
+
+        <article>
+          <h3>English Speaking Night: Halloween</h3>
+          <p>18:30, <time datetime="2026-10-31">thứ Bảy 31/10/2026</time> · Sảnh nhà A1 · CLB Tiếng Anh</p>
+          <p>Trò chơi, hoá trang và luyện nói tiếng Anh cùng sinh viên các khoa.</p>
+          <p><a href="events.html">Xem chi tiết</a></p>
+        </article>
+      </section>
+
+      <section id="cau-lac-bo">
+        <h2>Câu lạc bộ</h2>
+
+        <article>
+          <img src="assets/club-tin-hoc.svg" alt="" width="640" height="360">
+          <h3>CLB Tin học</h3>
+          <p>Học lập trình, làm dự án nhỏ và luyện thi Olympic Tin học sinh viên.</p>
+        </article>
+
+        <article>
+          <img src="assets/club-tinh-nguyen.svg" alt="" width="640" height="360">
+          <h3>CLB Tình nguyện</h3>
+          <p>Hiến máu, Tiếp sức mùa thi, Mùa hè xanh và Xuân tình nguyện.</p>
+        </article>
+
+        <article>
+          <img src="assets/club-tieng-anh.svg" alt="" width="640" height="360">
+          <h3>CLB Tiếng Anh</h3>
+          <p>Sinh hoạt English Speaking Club hằng tuần, luyện thi chứng chỉ.</p>
+        </article>
+
+        <article>
+          <img src="assets/club-am-nhac.svg" alt="" width="640" height="360">
+          <h3>CLB Âm nhạc</h3>
+          <p>Guitar, thanh nhạc, biểu diễn trong các đêm văn nghệ của trường.</p>
+        </article>
+
+        <article>
+          <img src="assets/club-bong-da.svg" alt="" width="640" height="360">
+          <h3>CLB Bóng đá</h3>
+          <p>Tập luyện mỗi chiều thứ Tư, tổ chức giải bóng đá sinh viên hằng năm.</p>
+        </article>
+
+        <article>
+          <img src="assets/club-ky-nang-mem.svg" alt="" width="640" height="360">
+          <h3>CLB Kỹ năng mềm</h3>
+          <p>Thuyết trình, làm việc nhóm, viết CV và chuẩn bị phỏng vấn xin việc.</p>
+        </article>
+      </section>
+
+      <section id="cau-hoi-thuong-gap">
+        <h2>Câu hỏi thường gặp</h2>
+
+        <details>
+          <summary>Ai được đăng ký thành viên EduHub?</summary>
+          <p>Tất cả sinh viên đang học tại Trường Đại học Đồng Tháp, chỉ cần mã số sinh viên và email.</p>
+        </details>
+
+        <details>
+          <summary>Tham gia sự kiện có mất phí không?</summary>
+          <p>Phần lớn sự kiện miễn phí. Sự kiện có phí sẽ ghi rõ ở trang chi tiết.</p>
+        </details>
+
+        <details>
+          <summary>Một sinh viên được tham gia mấy câu lạc bộ?</summary>
+          <p>Không giới hạn, nhưng nên chọn tối đa hai CLB để có thời gian sinh hoạt đều đặn.</p>
+        </details>
+      </section>
     </main>
 
-    <!-- TODO(ch1-T1): footer có địa chỉ trường và email liên hệ -->
+    <footer>
+      <address>
+        EduHub Web · Trường Đại học Đồng Tháp · 783 Phạm Hữu Lầu, Cao Lãnh, Đồng Tháp<br>
+        Liên hệ: <a href="mailto:eduhub@dthu.edu.vn">eduhub@dthu.edu.vn</a>
+      </address>
+      <p>Bài thực hành môn IN4529 — Lập trình Front End.</p>
+    </footer>
 
     <!-- TODO(ch1-T2): tạo events.html — bảng lịch 8 sự kiện (caption, thead/tbody/tfoot, th scope, <time>) -->
     <!-- TODO(ch1-T3): tạo event-detail.html — chi tiết "Workshop: Làm website đầu tiên với HTML" -->
