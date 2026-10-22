@@ -57,5 +57,5 @@ Mình là **Trần Thái Kiệt** (Karie), sinh viên năm 2 ngành Khoa học m
 - **Lớp:** ĐHCNTT24A-CS
 - **MSSV:** 0024418950
 
-Liên hệ: [GitHub](https://github.com/karie-212) · [LinkedIn](https://www.linkedin.com/in/tranthaikiet) · [Facebook](https://www.facebook.com/tr.th.kiet) · [TikTok](https://www.tiktok.com/@kariebel)
+Contact: [GitHub](https://github.com/karie-212) · [LinkedIn](https://www.linkedin.com/in/tranthaikiet) · [Facebook](https://www.facebook.com/tr.th.kiet) · [TikTok](https://www.tiktok.com/@kariebel)
 
