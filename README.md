@@ -3,7 +3,7 @@
 # EduHub Web
 
 **Bài tập môn IN452902 - Lập trình Front End**
-Trường Đại học Đồng Tháp · Năm học 2026–2027
+Trường Đại học Đồng Tháp · Năm học 2026-2027
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat)
@@ -52,7 +52,7 @@ Repo dùng [Conventional Commits](https://www.conventionalcommits.org/), kèm m�
 
 ## Về mình
 
-Mình là **Trần Thái Kiệt** (Karie), sinh viên năm 2 ngành Khoa học máy tính, Trường Đại học Đồng Tháp.
+Mình là **Trần Thái Kiệt** (Karie), sinh viên năm 2 ngành **Computer Science**, Trường Đại học Đồng Tháp.
 
 - **Lớp:** ĐHCNTT24A-CS
 - **MSSV:** 0024418950
