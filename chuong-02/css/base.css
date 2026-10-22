@@ -1,16 +1,95 @@
-/* TODO(ch2-T2): Tệp này chỉ dùng selector thẻ (body, h1, a, img…), chưa dùng class.
-   box-sizing: border-box cho *, *::before, *::after */
+/* Tệp này chỉ dùng selector thẻ, chưa dùng class */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-/* TODO(ch2-T2): Bỏ margin mặc định bằng :where(body, h1, h2, h3, p, ul, ol, dl, dd, figure, fieldset)
-   (:where() có specificity 0 nên các lớp sau ghi đè dễ dàng) */
+/* :where() có specificity 0 nên các lớp sau ghi đè dễ dàng */
+:where(body, h1, h2, h3, p, ul, ol, dl, dd, figure, fieldset) {
+  margin: 0;
+}
 
-/* TODO(ch2-T2): body - font, cỡ chữ, line-height, màu chữ, màu nền lấy từ token;
-   display: flex + flex-direction: column, và main { flex: 1 } để footer luôn ở đáy */
+/* Cuộn mượt chỉ khi người dùng không yêu cầu giảm chuyển động */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
 
-/* TODO(ch2-T2): Tiêu đề h1/h2/h3 dùng thang chữ token; img/svg { display: block; max-inline-size: 100%; block-size: auto } */
+/* Cột flex + main giãn ra để footer luôn nằm ở đáy */
+body {
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+}
 
-/* TODO(ch2-T2): input, button, select, textarea kế thừa font (font: inherit) */
+main {
+  flex: 1;
+}
 
-/* TODO(ch2-T2): :focus-visible - outline 3px màu --color-focus, outline-offset 2px */
+h1,
+h2,
+h3 {
+  line-height: var(--leading-tight);
+  text-wrap: balance;
+}
 
-/* TODO(ch2-T2): @media (prefers-reduced-motion: reduce) - tắt animation/transition, scroll-behavior: auto */
+h1 {
+  font-size: var(--text-3xl);
+}
+
+h2 {
+  font-size: var(--text-2xl);
+}
+
+h3 {
+  font-size: var(--text-xl);
+}
+
+img,
+svg {
+  display: block;
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+a {
+  color: var(--color-link);
+  text-underline-offset: 0.2em;
+}
+
+table {
+  border-collapse: collapse;
+  inline-size: 100%;
+}
+
+input,
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Tắt chuyển động: chỗ duy nhất được phép dùng !important */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
