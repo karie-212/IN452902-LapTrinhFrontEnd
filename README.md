@@ -29,21 +29,7 @@ Website gồm 4 trang: **Trang chủ**, **Lịch sự kiện**, **Chi tiết s�
 |:---:|---|:---:|:---:|
 | 01 | HTML ngữ nghĩa, bảng, form, SEO | [`chuong-01`](./chuong-01) | [Mở trang](https://karie-212.github.io/IN452902-LapTrinhFrontEnd/chuong-01/) |
 | 02 | CSS responsive, design token, dark mode | [`chuong-02`](./chuong-02) | [Mở trang](https://karie-212.github.io/IN452902-LapTrinhFrontEnd/chuong-02/) |
-
-### Chương 1 - HTML
-
-- Bố cục bằng thẻ ngữ nghĩa: `header`, `nav`, `main`, `section`, `article`, `footer`
-- Bảng lịch sự kiện có `caption`, `th scope`, `time`
-- Form đăng ký dùng kiểm tra dữ liệu gốc của HTML, không cần JavaScript
-- Meta SEO, Open Graph và liên kết "Bỏ qua, đến nội dung chính" cho người dùng bàn phím
-
-### Chương 2 - CSS
-
-- Design token bằng biến CSS, dark mode chỉ đổi giá trị biến
-- Tổ chức CSS bằng `@layer` và `@import`
-- Bố cục mobile-first với Flexbox, Grid, `auto-fit` và `grid-template-areas`
-- Selector hiện đại: `:has()`, `:user-invalid`, CSS nesting
-- Tôn trọng cài đặt `prefers-reduced-motion` của người dùng
+| ... | *Các chương tiếp theo đang được cập nhật* | – | – |
 
 ## Cấu trúc thư mục
 
