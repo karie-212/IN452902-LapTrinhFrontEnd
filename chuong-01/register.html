@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Đăng ký thành viên - EduHub Web</title>
+  </head>
+  <body>
+    <header>
+      <a href="index.html">
+        <img src="assets/logo.svg" alt="EduHub - về trang chủ" width="64" height="64">
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Trang chủ</a></li>
+          <li><a href="events.html">Sự kiện</a></li>
+          <li><a href="index.html#cau-lac-bo">Câu lạc bộ</a></li>
+          <li><a href="register.html" aria-current="page">Đăng ký thành viên</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="noi-dung">
+      <h1>Đăng ký thành viên</h1>
+
+      <form action="register.html" method="get">
+        <fieldset>
+          <legend>Thông tin cá nhân</legend>
+
+          <p>
+            <label for="mssv">Mã số sinh viên</label>
+            <input type="text" id="mssv" name="mssv" required pattern="[0-9]{10}" inputmode="numeric" maxlength="10" title="Mã số sinh viên gồm đúng 10 chữ số, ví dụ 0024410123" aria-describedby="mssv-goi-y">
+            <small id="mssv-goi-y">Đúng 10 chữ số, ví dụ 0024410123.</small>
+          </p>
+
+          <p>
+            <label for="ho-ten">Họ và tên</label>
+            <input type="text" id="ho-ten" name="ho-ten" required minlength="2" maxlength="100" autocomplete="name">
+          </p>
+
+          <p>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" aria-describedby="email-goi-y">
+            <small id="email-goi-y">Ví dụ mssv@sv.dthu.edu.vn.</small>
+          </p>
+
+          <p>
+            <label for="so-dien-thoai">Số điện thoại</label>
+            <input type="tel" id="so-dien-thoai" name="so-dien-thoai" pattern="0[0-9]{9}" maxlength="10" autocomplete="tel" title="Số điện thoại gồm 10 chữ số, bắt đầu bằng số 0">
+          </p>
+
+          <p>
+            <label for="ngay-sinh">Ngày sinh</label>
+            <input type="date" id="ngay-sinh" name="ngay-sinh" autocomplete="bday">
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Tài khoản</legend>
+
+          <p>
+            <label for="mat-khau">Mật khẩu</label>
+            <input type="password" id="mat-khau" name="mat-khau" required minlength="8" autocomplete="new-password" aria-describedby="mat-khau-goi-y">
+            <small id="mat-khau-goi-y">Ít nhất 8 ký tự.</small>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Sinh hoạt câu lạc bộ</legend>
+
+          <p>
+            <label for="cau-lac-bo">Câu lạc bộ muốn tham gia</label>
+            <select id="cau-lac-bo" name="cau-lac-bo">
+              <option value="">-- Chọn câu lạc bộ --</option>
+              <option value="tin-hoc">CLB Tin học</option>
+              <option value="tinh-nguyen">CLB Tình nguyện</option>
+              <option value="tieng-anh">CLB Tiếng Anh</option>
+              <option value="am-nhac">CLB Âm nhạc</option>
+              <option value="bong-da">CLB Bóng đá</option>
+              <option value="ky-nang-mem">CLB Kỹ năng mềm</option>
+            </select>
+          </p>
+
+          <fieldset>
+            <legend>Năm học hiện tại</legend>
+            <input type="radio" id="nam-1" name="nam-hoc" value="1" required>
+            <label for="nam-1">Năm 1</label>
+            <input type="radio" id="nam-2" name="nam-hoc" value="2">
+            <label for="nam-2">Năm 2</label>
+            <input type="radio" id="nam-3" name="nam-hoc" value="3">
+            <label for="nam-3">Năm 3</label>
+            <input type="radio" id="nam-4" name="nam-hoc" value="4">
+            <label for="nam-4">Năm 4</label>
+          </fieldset>
+
+          <p>
+            <label for="gioi-thieu">Giới thiệu ngắn về bản thân</label>
+            <textarea id="gioi-thieu" name="gioi-thieu" rows="5" cols="40" maxlength="500" aria-describedby="gioi-thieu-goi-y"></textarea>
+            <small id="gioi-thieu-goi-y">Tối đa 500 ký tự.</small>
+          </p>
+        </fieldset>
+
+        <p>
+          <input type="checkbox" id="dong-y" name="dong-y" value="co" required>
+          <label for="dong-y">Tôi đồng ý với nội quy sinh hoạt câu lạc bộ</label>
+        </p>
+
+        <p>
+          <button type="submit">Đăng ký</button>
+          <button type="reset">Nhập lại</button>
+        </p>
+      </form>
+    </main>
+
+    <footer>
+      <address>
+        EduHub Web · Trường Đại học Đồng Tháp · 783 Phạm Hữu Lầu, Cao Lãnh, Đồng Tháp<br>
+        Liên hệ: <a href="mailto:eduhub@dthu.edu.vn">eduhub@dthu.edu.vn</a>
+      </address>
+      <p>Bài thực hành môn IN4529 - Lập trình Front End.</p>
+    </footer>
+  </body>
+</html>
