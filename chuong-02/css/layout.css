@@ -1,6 +1,9 @@
 /* Mobile-first: CSS ngoài @media là giao diện điện thoại.
    Chỉ dùng 2 mốc: (width >= 40rem) và (width >= 64rem) */
+/* inline-size: 100%: main là flex item có margin auto nên không tự giãn,
+   thiếu dòng này nội dung rộng (bảng) sẽ đẩy cả trang cuộn ngang */
 .container {
+  inline-size: 100%;
   max-inline-size: var(--container-max);
   margin-inline: auto;
   padding-inline: var(--space-4);
@@ -136,7 +139,48 @@
   list-style: none;
 }
 
-/* TODO(ch2-T5): .detail - Grid 1 cột; từ 64rem: 2 cột (2fr và 1fr) với grid-template-areas
-     "head head" "media info" "content info" "prep info" "foot foot".
-   Gán grid-area cho .detail__head/__media/__info/__content/__prep/__foot CHỈ BÊN TRONG media query.
-   .detail__info: align-self: start; position: sticky; top chừa chỗ cho header */
+/* Trang chi tiết: 1 cột theo thứ tự HTML; từ 64rem chia vùng bằng grid-template-areas.
+   grid-area chỉ gán trong media query để điện thoại giữ thứ tự tự nhiên */
+.detail {
+  display: grid;
+  gap: var(--space-8);
+
+  @media (width >= 64rem) {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas:
+      "head    head"
+      "media   info"
+      "content info"
+      "prep    info"
+      "foot    foot";
+    gap: var(--space-8) var(--space-12);
+
+    & .detail__head {
+      grid-area: head;
+    }
+
+    & .detail__media {
+      grid-area: media;
+    }
+
+    /* Thẻ thông tin dính bên phải khi cuộn, chừa chỗ cho header sticky */
+    & .detail__info {
+      grid-area: info;
+      align-self: start;
+      position: sticky;
+      top: calc(var(--space-16) + var(--space-6));
+    }
+
+    & .detail__content {
+      grid-area: content;
+    }
+
+    & .detail__prep {
+      grid-area: prep;
+    }
+
+    & .detail__foot {
+      grid-area: foot;
+    }
+  }
+}
