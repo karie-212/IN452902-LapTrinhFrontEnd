@@ -526,10 +526,183 @@
   }
 }
 
-/* TODO(ch2-T6): .form (thẻ nền surface, bo góc), fieldset (bỏ viền, min-inline-size: 0), legend.
-   .form__grid: 1 cột, từ 40rem 2 cột. .field: Grid, align-content: start;
-   input/select/textarea full width, cao ≥ 2.75rem, &:focus-visible và &:user-invalid (viền --color-danger).
-   .field--full chiếm cả hàng (grid-column: 1 / -1). */
+/* Form: thẻ nền surface, các fieldset xếp dọc */
+.form {
+  display: grid;
+  gap: var(--space-8);
+  padding: var(--space-6);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  accent-color: var(--color-primary); /* radio, checkbox theo màu chính */
 
-/* TODO(ch2-T6): .choice-group__options (Flexbox), .choice viên thuốc;
-   .choice:has(input:checked) tô nền; .field--check cho ô đồng ý */
+  @media (width >= 40rem) {
+    padding: var(--space-8);
+  }
+
+  /* min-inline-size: 0 để fieldset không bị nội dung rộng đẩy tràn */
+  & fieldset {
+    display: grid;
+    gap: var(--space-6);
+    min-inline-size: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  & legend {
+    margin-block-end: var(--space-4);
+    padding: 0;
+    font-size: var(--text-lg);
+    font-weight: 700;
+  }
+
+  /* Dấu * bắt buộc */
+  & abbr[title] {
+    color: var(--color-danger);
+    text-decoration: none;
+  }
+
+  & .btn-row {
+    margin-block-start: 0;
+  }
+}
+
+/* 1 cột trên điện thoại, từ 40rem 2 cột */
+.form__grid {
+  display: grid;
+  gap: var(--space-6);
+
+  @media (width >= 40rem) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Một ô nhập: nhãn trên, ô nhập, gợi ý dưới */
+.field {
+  display: grid;
+  align-content: start;
+  gap: var(--space-2);
+
+  & label {
+    font-weight: 600;
+  }
+
+  & small {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+  }
+
+  & :is(input, select, textarea) {
+    inline-size: 100%;
+    min-block-size: 2.75rem;
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    transition:
+      border-color var(--duration-fast),
+      box-shadow var(--duration-fast);
+
+    &:hover {
+      border-color: var(--color-text-muted);
+    }
+
+    &:focus-visible {
+      border-color: var(--color-focus);
+      outline: none;
+      box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-focus) 35%, transparent);
+    }
+
+    /* Chỉ báo hợp lệ/lỗi SAU khi người dùng đã sửa ô, không đỏ ngay lúc mở trang */
+    &:user-valid {
+      border-color: var(--color-success);
+    }
+
+    &:user-invalid {
+      border-color: var(--color-danger);
+      box-shadow: 0 0 0 1px var(--color-danger);
+    }
+  }
+
+  & textarea {
+    resize: vertical;
+  }
+
+  /* Ô lỗi thì gợi ý cũng đổi màu để nói rõ lý do */
+  &:has(:user-invalid) small {
+    color: var(--color-danger);
+  }
+}
+
+.field--full {
+  grid-column: 1 / -1;
+}
+
+/* Nhóm radio dạng ô chọn */
+.choice-group__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.choice {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-block-size: 2.75rem;
+  padding-inline: var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast),
+    border-color var(--duration-fast);
+
+  &:hover {
+    border-color: var(--color-primary);
+  }
+
+  /* Ô đang chọn: tô nền + viền màu chính, không cần JS */
+  &:has(input:checked) {
+    border-color: var(--color-primary);
+    background-color: color-mix(in srgb, var(--color-primary) 15%, transparent);
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  /* Focus nằm trên input nhỏ, vẽ viền cho cả ô cho dễ thấy */
+  &:has(input:focus-visible) {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 2px;
+  }
+
+  & input:focus-visible {
+    outline: none;
+  }
+}
+
+/* Checkbox đồng ý: ô vuông cạnh nhãn */
+.field--check {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+
+  & input {
+    flex-shrink: 0;
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+    margin-block-start: 0.2em;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+  }
+
+  & label {
+    cursor: pointer;
+  }
+
+  &:has(input:user-invalid) label {
+    color: var(--color-danger);
+  }
+}
