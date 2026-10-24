@@ -17,6 +17,7 @@ Lúc đầu trang trông như Ch01 (chưa có CSS) - đó là bình thường.
 2. `ch2-T1` trong `tokens.css` → `ch2-T2` trong `base.css`.
 3. `ch2-T3` → `ch2-T4` → `ch2-T5` → `ch2-T6` trong `layout.css` và `components.css`.
 4. (Challenge) `ch2-T7`: tạo thư mục `challenge-tailwind/`, viết lại `events.html` bằng Tailwind CSS v4 (xem đề bài).
+   → Bài làm: [challenge-tailwind/events.html](challenge-tailwind/events.html) (trang sự kiện viết lại bằng Tailwind CSS v4).
 
 Tìm nhanh mọi việc cần làm: VS Code → Ctrl+Shift+F → `TODO(ch2-`.
 
