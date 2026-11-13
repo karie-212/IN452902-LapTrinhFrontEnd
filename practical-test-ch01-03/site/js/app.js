@@ -18,3 +18,55 @@ const formatSeats = (event) => {
   }
   return `Còn ${remaining}/${event.capacity} chỗ`;
 };
+
+// Câu 2b: tạo 1 card <article>
+const createEventCard = (event) => {
+  const card = document.createElement('article');
+  card.className = 'event-card';
+
+  const img = document.createElement('img');
+  img.setAttribute('src', 'img/event.svg');
+  img.setAttribute('alt', `Ảnh minh hoạ sự kiện ${event.name}`);
+  img.setAttribute('width', '320');
+  img.setAttribute('height', '180');
+
+  const title = document.createElement('h2');
+  title.className = 'event-name';
+  const link = document.createElement('a');
+  link.setAttribute('href', `event-detail.html?id=${encodeURIComponent(event.id)}`);
+  link.textContent = event.name;
+  title.append(link);
+
+  const timeP = document.createElement('p');
+  timeP.className = 'event-time';
+  const time = document.createElement('time');
+  time.setAttribute('datetime', event.startTime);
+  time.textContent = formatDateTime(event.startTime);
+  timeP.append(time);
+
+  const location = document.createElement('p');
+  location.className = 'event-location';
+  location.textContent = event.location;
+
+  const seats = document.createElement('p');
+  seats.className = 'event-seats';
+  const seatsText = formatSeats(event);
+  if (seatsText === 'Hết chỗ') {
+    const badge = document.createElement('span');
+    badge.className = 'badge-full';
+    badge.textContent = seatsText;
+    seats.append(badge);
+  } else {
+    seats.textContent = seatsText;
+  }
+
+  card.append(img, title, timeP, location, seats);
+  return card;
+};
+
+// Câu 2b: thay toàn bộ card trong #event-list
+const renderEvents = (events) => {
+  const list = document.querySelector('#event-list');
+  const cards = events.map((event) => createEventCard(event));
+  list.replaceChildren(...cards);
+};
