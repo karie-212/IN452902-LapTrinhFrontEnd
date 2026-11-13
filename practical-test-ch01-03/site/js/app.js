@@ -9,3 +9,12 @@ const formatDateTime = (iso) =>
     hour: '2-digit', minute: '2-digit',
     day: '2-digit', month: '2-digit', year: 'numeric',
   });
+
+// Câu 2a: số chỗ còn lại, vd "Còn 12/40 chỗ" hoặc "Hết chỗ"
+const formatSeats = (event) => {
+  const remaining = event.capacity - event.registeredCount;
+  if (remaining <= 0) {
+    return 'Hết chỗ';
+  }
+  return `Còn ${remaining}/${event.capacity} chỗ`;
+};
