@@ -70,3 +70,43 @@ const renderEvents = (events) => {
   const cards = events.map((event) => createEventCard(event));
   list.replaceChildren(...cards);
 };
+
+// Câu 2c: gọi API, hiện trạng thái và vẽ lại danh sách
+const loadEvents = async (keyword) => {
+  const status = document.querySelector('#status');
+
+  const params = new URLSearchParams({ pageSize: 50 });
+  if (keyword !== '') {
+    params.set('q', keyword);
+  }
+  const url = `${API_URL}/api/events?${params}`;
+
+  status.textContent = 'Đang tải…';
+
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+    const data = await response.json();
+
+    renderEvents(data.items);
+    if (data.items.length === 0) {
+      status.textContent = 'Không có sự kiện nào khớp từ khoá.';
+    } else {
+      status.textContent = `Tìm thấy ${data.totalCount} sự kiện`;
+    }
+  } catch (error) {
+    renderEvents([]);
+    status.textContent = 'Không tải được dữ liệu, vui lòng thử lại.';
+  }
+};
+
+const form = document.querySelector('#search-form');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const keyword = document.querySelector('#keyword').value.trim();
+  loadEvents(keyword);
+});
+
+loadEvents('');
