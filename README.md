@@ -26,6 +26,7 @@ Website gồm 4 trang: **Trang chủ**, **Lịch sự kiện**, **Chi tiết s�
 |:---:|---|:---:|:---:|
 | 01 | HTML ngữ nghĩa, bảng, form, SEO | [`chuong-01`](./chuong-01) | [Mở trang](https://karie-212.github.io/IN452902-LapTrinhFrontEnd/chuong-01/) |
 | 02 | CSS responsive, design token, dark mode | [`chuong-02`](./chuong-02) | [Mở trang](https://karie-212.github.io/IN452902-LapTrinhFrontEnd/chuong-02/) |
+| 03 | JavaScript hiện đại, DOM, fetch API, Vite | [`chuong-03`](./chuong-03) | [Mở trang](https://karie-212.github.io/IN452902-LapTrinhFrontEnd/chuong-03/) |
 | ... | *Các chương tiếp theo đang được cập nhật* | – | – |
 
 ## Cấu trúc thư mục
@@ -34,6 +35,7 @@ Website gồm 4 trang: **Trang chủ**, **Lịch sự kiện**, **Chi tiết s�
 IN452902-LapTrinhFrontEnd/
 ├── chuong-01/
 ├── chuong-02/
+├── chuong-03/     # dự án Vite: npm install, npm run api, npm run dev
 ├── ...            # các chương tiếp theo sẽ được cập nhật dần
 └── README.md
 ```
