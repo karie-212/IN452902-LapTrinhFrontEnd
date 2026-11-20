@@ -4,12 +4,13 @@ import hero from '../assets/hero.svg'
 import { ClubCard } from '../components/ClubCard'
 import { EventList } from '../components/EventList'
 import { clubs, events } from '../data'
+import { filterEvents } from '../lib/events'
 
 export function HomePage() {
   // Lấy "bây giờ" một lần khi trang mở; render phải thuần nên không gọi new Date() trực tiếp
   const [now] = useState(() => new Date())
-  // TODO(ch4-T2): chỉ lấy 3 sự kiện sắp tới gần nhất (gợi ý: filterEvents(...) rồi slice)
-  const upcoming = events
+  // Dữ liệu suy ra: 3 sự kiện sắp tới gần nhất — tính lúc render, không cần state
+  const upcoming = filterEvents(events, { query: '', clubId: '', includePast: false }, now).slice(0, 3)
 
   return (
     <>
