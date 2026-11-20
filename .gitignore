@@ -1,4 +1,10 @@
-   .vscode/
-   node_modules/
-   .DS_Store
-   Thumbs.db
+.vscode/
+node_modules/
+dist/
+.env.local
+.DS_Store
+Thumbs.db
+__MACOSX/
+
+# Tài liệu/lời giải cá nhân, không đưa lên GitHub
+_private/
